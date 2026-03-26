@@ -1,4 +1,4 @@
-#!/data/data/com.termux/env bash
+#!/data/data/com.termux/files/usr/bin/env bash
 # Normal interactive su wrapper
 # Reads normal rc/profile, fake $0, PS1 (~ + $PREFIX->/), -c, pipes
 
