@@ -1,4 +1,4 @@
-#!/data/data/com.termux/env bash
+#!/data/data/com.termux/files/usr/bin/bash
 
 echo "[*] Installing termux-miscallious..."
 
