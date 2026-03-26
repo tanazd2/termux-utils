@@ -25,15 +25,17 @@ A collection of powerful utilities to supercharge your Termux Application!
 
 📦 Installation
 
+```Bash
 apt update -y && apt upgrade -y
 apt install curl wget tar coreutils -y
+bash <(curl -sL https://raw.githubusercontent.com/tanazd1/termux-miscellaneous/main/install.sh)
+```
 
-curl -sL https://raw.githubusercontent.com/tanazd1/termux-miscellaneous/main/install.sh | bash
 
 ---
 
 🧪 Examples
-
+```
 # Start custom shell
 c
 
@@ -45,7 +47,7 @@ ns python script.py
 
 # Extract archive
 x file.zip
-
+```
 ---
 
 🧠 Why this exists
@@ -55,11 +57,6 @@ This toolkit adds speed, flexibility, and better workflows.
 
 ---
 
-⚠️ Disclaimer
-
-Always review install scripts before running:
-
-curl -s
 
 ---
 
