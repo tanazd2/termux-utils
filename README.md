@@ -22,6 +22,7 @@ A collection of powerful utilities to supercharge your Termux Application!!!
 - "x" → Universal archive extractor
 - "lock" - Lock your terminal
 - "exe!" - Run scripts even from internal storage
+- "r" - Run hex codes!
 ---
 
 📦 Installation
