@@ -1,43 +1,45 @@
+
 ![Demo of C shell and x working](.hidden/.secrets/x1/Demo.png)
 
-
-
-
-🚀 Termux Misc Toolkit
+🚀 **Termux Misc Toolkit**
 
 A collection of powerful utilities to supercharge your Termux Application!!!
 
 ![Stars](https://img.shields.io/github/stars/tanazd1/termux-miscellaneous?style=flat&color=blue) ![Forks](https://img.shields.io/github/forks/tanazd1/termux-miscellaneous?style=flat&color=green) ![Issues](https://img.shields.io/github/issues/tanazd1/termux-miscellaneous?style=flat&color=orange) ![Pull Requests](https://img.shields.io/github/issues-pr/tanazd1/termux-miscellaneous?style=flat&color=red) ![License](https://img.shields.io/github/license/tanazd1/termux-miscellaneous?style=flat&color=yellowgreen) ![Last Commit](https://img.shields.io/github/last-commit/tanazd1/termux-miscellaneous?style=flat&color=purple) ![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen)
+
 ---
 
-⚡ Features
+⚡ **Features**
 
-- "c" → Custom C shell (similar to cling)
-- "cdt" → Run commands in a directory and return to "$OLDPWD"
-- "ns" → Run scripts without a shebang
+- `"c"` → Custom C shell (similar to cling)  
+- `"cdt"` → Run commands in a directory and return to `$OLDPWD`  
+- `"ns"` → Run scripts without a shebang  
+  ```bash
   ns <INTERPRETER> <SCRIPT>
-- "su" → Fake superuser wrapper
-- "tc" → Parallel job runner
-- "tct" → Test "tc"
-- "x" → Universal archive extractor
-- "lock" - Lock your terminal
-- "exe!" - Run scripts even from internal storage
-- "r" - Run hex codes!
+  ```  
+- `"su"` → Fake superuser wrapper  
+- `"tc"` → Parallel job runner  
+- `"tct"` → Test `"tc"`  
+- `"x"` → Universal archive extractor  
+- `"lock"` → Lock your terminal  
+- `"exe!"` → Run scripts even from internal storage  
+- `"r"` → Run hex codes  
+
 ---
 
-📦 Installation
+📦 **Installation**
 
-```Bash
+```bash
 apt update -y && apt upgrade -y
 apt install curl wget tar coreutils -y
 bash <(curl -sL https://bit.ly/4d7AzZC)
 ```
 
-
 ---
 
-🧪 Examples
-```
+🧪 **Examples**
+
+```bash
 # Start custom shell
 c
 
@@ -50,374 +52,50 @@ ns python script.py
 # Extract archive
 x file.zip
 ```
+
 ---
 
-🧠 Why this exists
+🧠 **Why this exists**
 
-Termux is powerful but lacks convenience tools.
+Termux is powerful but lacks convenience tools.  
 This toolkit adds speed, flexibility, and better workflows.
 
 ---
 
+📁 **Custom Properties**
+
+This repository contains a **Custom Properties YAML** that stores structured metadata:
+
+**Path:** `.github/custom-properties/properties.yaml`
+
+```yaml
+type: Custom Properties
+owner: tanazd1
+repo_name: termux-utils
+purpose: Termux utilities and scripts
+default_timeout: 30
+enable_logging: true
+max_daily_commits: 100
+features:
+  - c
+  - cdt
+  - exe!
+  - ns
+  - su
+  - tc
+  - tct
+  - r
+  - x
+```
+
+> This YAML can be read by scripts, automation tools, or CI/CD pipelines for configuration and management.
 
 ---
 
-⭐ Support
+⭐ **Support**
 
 If you like this project:
 
-- Star ⭐ the repo
-- Fork 🍴 it
+- Star ⭐ the repo  
+- Fork 🍴 it  
 - Suggest features / improvements
-# micro commit 1 1774696049
-# micro commit 2 1774696049
-# micro commit 3 1774696049
-# micro commit 4 1774696050
-# micro commit 5 1774696050
-# micro commit 6 1774696050
-# micro commit 7 1774696050
-# micro commit 8 1774696050
-# micro commit 9 1774696051
-# micro commit 10 1774696051
-# micro commit 11 1774696051
-# micro commit 12 1774696051
-# micro commit 13 1774696051
-# micro commit 14 1774696052
-# micro commit 15 1774696052
-# micro commit 16 1774696052
-# micro commit 17 1774696052
-# micro commit 18 1774696052
-# micro commit 19 1774696053
-# micro commit 20 1774696053
-# micro commit 21 1774696053
-# micro commit 22 1774696053
-# micro commit 23 1774696053
-# micro commit 24 1774696054
-# micro commit 25 1774696054
-# micro commit 26 1774696054
-# micro commit 27 1774696054
-# micro commit 28 1774696054
-# micro commit 29 1774696054
-# micro commit 30 1774696055
-# micro commit 31 1774696055
-# micro commit 32 1774696055
-# micro commit 33 1774696055
-# micro commit 34 1774696055
-# micro commit 35 1774696056
-# micro commit 36 1774696056
-# micro commit 37 1774696056
-# micro commit 38 1774696056
-# micro commit 39 1774696056
-# micro commit 40 1774696057
-# micro commit 41 1774696057
-# micro commit 42 1774696057
-# micro commit 43 1774696057
-# micro commit 44 1774696057
-# micro commit 45 1774696058
-# micro commit 46 1774696058
-# micro commit 47 1774696058
-# micro commit 48 1774696058
-# micro commit 49 1774696058
-# micro commit 50 1774696059
-# micro commit 51 1774696059
-# micro commit 52 1774696059
-# micro commit 53 1774696059
-# micro commit 54 1774696059
-# micro commit 55 1774696060
-# micro commit 1 1774696104
-# micro commit 2 1774696104
-# micro commit 3 1774696105
-# micro commit 4 1774696105
-# micro commit 5 1774696105
-# micro commit 6 1774696105
-# micro commit 7 1774696105
-# micro commit 8 1774696105
-# micro commit 9 1774696105
-# micro commit 10 1774696106
-# micro commit 11 1774696106
-# micro commit 12 1774696106
-# micro commit 13 1774696106
-# micro commit 14 1774696106
-# micro commit 15 1774696106
-# micro commit 16 1774696107
-# micro commit 17 1774696107
-# micro commit 18 1774696107
-# micro commit 19 1774696107
-# micro commit 20 1774696107
-# micro commit 21 1774696108
-# micro commit 22 1774696108
-# micro commit 23 1774696108
-# micro commit 24 1774696108
-# micro commit 25 1774696108
-# micro commit 26 1774696108
-# micro commit 27 1774696109
-# micro commit 28 1774696109
-# micro commit 29 1774696109
-# micro commit 30 1774696109
-# micro commit 31 1774696109
-# micro commit 32 1774696110
-# micro commit 33 1774696110
-# micro commit 34 1774696110
-# micro commit 35 1774696110
-# micro commit 36 1774696110
-# micro commit 37 1774696111
-# micro commit 38 1774696111
-# micro commit 39 1774696111
-# micro commit 40 1774696111
-# micro commit 41 1774696111
-# micro commit 42 1774696111
-# micro commit 43 1774696112
-# micro commit 44 1774696112
-# micro commit 45 1774696112
-# micro commit 46 1774696112
-# micro commit 47 1774696112
-# micro commit 48 1774696112
-# micro commit 49 1774696112
-# micro commit 50 1774696113
-# micro commit 51 1774696113
-# micro commit 52 1774696113
-# micro commit 53 1774696113
-# micro commit 54 1774696113
-# micro commit 55 1774696113
-# micro commit 56 1774696113
-# micro commit 57 1774696113
-# micro commit 58 1774696113
-# micro commit 59 1774696113
-# micro commit 60 1774696113
-# micro commit 61 1774696114
-# micro commit 62 1774696114
-# micro commit 63 1774696114
-# micro commit 64 1774696114
-# micro commit 65 1774696114
-# micro commit 66 1774696114
-# micro commit 67 1774696114
-# micro commit 68 1774696114
-# micro commit 69 1774696114
-# micro commit 70 1774696115
-# micro commit 71 1774696115
-# micro commit 72 1774696115
-# micro commit 73 1774696115
-# micro commit 74 1774696115
-# micro commit 75 1774696116
-# micro commit 76 1774696116
-# micro commit 77 1774696116
-# micro commit 78 1774696116
-# micro commit 79 1774696116
-# micro commit 80 1774696116
-# micro commit 81 1774696116
-# micro commit 82 1774696116
-# micro commit 83 1774696116
-# micro commit 84 1774696117
-# micro commit 85 1774696117
-# micro commit 86 1774696117
-# micro commit 87 1774696117
-# micro commit 88 1774696117
-# micro commit 89 1774696117
-# micro commit 90 1774696118
-# micro commit 91 1774696118
-# micro commit 92 1774696118
-# micro commit 93 1774696118
-# micro commit 94 1774696118
-# micro commit 95 1774696118
-# micro commit 96 1774696118
-# micro commit 97 1774696118
-# micro commit 98 1774696119
-# micro commit 99 1774696119
-# micro commit 100 1774696119
-# micro commit 101 1774696119
-# micro commit 102 1774696119
-# micro commit 103 1774696119
-# micro commit 104 1774696119
-# micro commit 105 1774696119
-# micro commit 106 1774696119
-# micro commit 107 1774696119
-# micro commit 108 1774696119
-# micro commit 109 1774696120
-# micro commit 110 1774696120
-# micro commit 111 1774696120
-# micro commit 112 1774696120
-# micro commit 113 1774696120
-# micro commit 114 1774696120
-# micro commit 115 1774696120
-# micro commit 116 1774696120
-# micro commit 117 1774696121
-# micro commit 118 1774696121
-# micro commit 119 1774696121
-# micro commit 120 1774696121
-# micro commit 121 1774696121
-# micro commit 122 1774696121
-# micro commit 123 1774696122
-# micro commit 124 1774696122
-# micro commit 125 1774696122
-# micro commit 126 1774696122
-# micro commit 127 1774696122
-# micro commit 128 1774696122
-# micro commit 129 1774696122
-# micro commit 130 1774696123
-# micro commit 131 1774696123
-# micro commit 132 1774696123
-# micro commit 133 1774696123
-# micro commit 134 1774696123
-# micro commit 135 1774696123
-# micro commit 136 1774696123
-# micro commit 137 1774696123
-# micro commit 138 1774696123
-# micro commit 139 1774696124
-# micro commit 140 1774696124
-# micro commit 141 1774696124
-# micro commit 142 1774696124
-# micro commit 143 1774696124
-# micro commit 144 1774696124
-# micro commit 145 1774696124
-# micro commit 146 1774696124
-# micro commit 147 1774696125
-# micro commit 148 1774696125
-# micro commit 149 1774696125
-# micro commit 150 1774696125
-# micro commit 151 1774696125
-# micro commit 152 1774696125
-# micro commit 153 1774696125
-# micro commit 154 1774696126
-# micro commit 155 1774696126
-# micro commit 156 1774696126
-# micro commit 157 1774696126
-# micro commit 158 1774696126
-# micro commit 159 1774696126
-# micro commit 160 1774696127
-# micro commit 161 1774696127
-# micro commit 162 1774696127
-# micro commit 163 1774696127
-# micro commit 164 1774696127
-# micro commit 165 1774696127
-# micro commit 166 1774696128
-# micro commit 167 1774696128
-# micro commit 168 1774696128
-# micro commit 169 1774696128
-# micro commit 170 1774696128
-# micro commit 171 1774696128
-# micro commit 172 1774696128
-# micro commit 173 1774696128
-# micro commit 174 1774696128
-# micro commit 175 1774696129
-# micro commit 176 1774696129
-# micro commit 177 1774696129
-# micro commit 178 1774696129
-# micro commit 179 1774696129
-# micro commit 180 1774696129
-# micro commit 181 1774696129
-# micro commit 182 1774696129
-# micro commit 183 1774696130
-# micro commit 184 1774696130
-# micro commit 185 1774696130
-# micro commit 186 1774696130
-# micro commit 187 1774696130
-# micro commit 188 1774696130
-# micro commit 189 1774696130
-# micro commit 190 1774696130
-# micro commit 191 1774696131
-# micro commit 192 1774696131
-# micro commit 193 1774696131
-# micro commit 194 1774696131
-# micro commit 195 1774696131
-# micro commit 196 1774696132
-# micro commit 197 1774696132
-# micro commit 198 1774696132
-# micro commit 199 1774696132
-# micro commit 200 1774696133
-# micro commit 201 1774696133
-# micro commit 202 1774696133
-# micro commit 203 1774696133
-# micro commit 204 1774696133
-# micro commit 205 1774696133
-# micro commit 206 1774696134
-# micro commit 207 1774696134
-# micro commit 208 1774696134
-# micro commit 209 1774696134
-# micro commit 210 1774696134
-# micro commit 211 1774696134
-# micro commit 212 1774696135
-# micro commit 213 1774696135
-# micro commit 214 1774696135
-# micro commit 215 1774696135
-# micro commit 216 1774696135
-# micro commit 217 1774696136
-# micro commit 218 1774696136
-# micro commit 219 1774696136
-# micro commit 220 1774696136
-# micro commit 221 1774696136
-# micro commit 222 1774696136
-# micro commit 223 1774696137
-# micro commit 224 1774696137
-# micro commit 225 1774696137
-# micro commit 226 1774696137
-# micro commit 227 1774696137
-# micro commit 228 1774696138
-# micro commit 229 1774696138
-# micro commit 230 1774696138
-# micro commit 231 1774696138
-# micro commit 232 1774696138
-# micro commit 233 1774696138
-# micro commit 234 1774696139
-# micro commit 235 1774696139
-# micro commit 236 1774696139
-# micro commit 237 1774696139
-# micro commit 238 1774696139
-# micro commit 239 1774696139
-# micro commit 240 1774696139
-# micro commit 241 1774696140
-# micro commit 242 1774696140
-# micro commit 243 1774696140
-# micro commit 244 1774696140
-# micro commit 245 1774696140
-# micro commit 246 1774696140
-# micro commit 247 1774696140
-# micro commit 248 1774696141
-# micro commit 249 1774696141
-# micro commit 250 1774696141
-# micro commit 251 1774696141
-# micro commit 252 1774696141
-# micro commit 253 1774696142
-# micro commit 254 1774696142
-# micro commit 255 1774696142
-# micro commit 256 1774696142
-# micro commit 257 1774696142
-# micro commit 258 1774696142
-# micro commit 259 1774696143
-# micro commit 260 1774696143
-# micro commit 261 1774696143
-# micro commit 262 1774696143
-# micro commit 263 1774696143
-# micro commit 264 1774696143
-# micro commit 265 1774696143
-# micro commit 266 1774696144
-# micro commit 267 1774696144
-# micro commit 268 1774696144
-# micro commit 269 1774696144
-# micro commit 270 1774696144
-# micro commit 271 1774696144
-# micro commit 272 1774696144
-# micro commit 273 1774696144
-# micro commit 274 1774696144
-# micro commit 275 1774696144
-# micro commit 276 1774696145
-# micro commit 277 1774696145
-# micro commit 278 1774696145
-# micro commit 279 1774696145
-# micro commit 280 1774696145
-# micro commit 281 1774696145
-# micro commit 282 1774696145
-# micro commit 283 1774696145
-# micro commit 284 1774696146
-# micro commit 285 1774696146
-# micro commit 286 1774696146
-# micro commit 287 1774696146
-# micro commit 288 1774696146
-# micro commit 289 1774696147
-# micro commit 290 1774696147
-# micro commit 291 1774696147
-# micro commit 292 1774696147
-# micro commit 293 1774696147
-# micro commit 294 1774696147
-# micro commit 295 1774696147
-# micro commit 296 1774696147
-# micro commit 297 1774696147
