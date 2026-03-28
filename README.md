@@ -1,4 +1,4 @@
-![Demo of C shell and x working](Demo.png)
+![Demo of C shell and x working](.hidden/.secrets/x1/Demo.png)
 
 
 
