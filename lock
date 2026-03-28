@@ -1,0 +1,124 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# -----------------------
+# Termux Lock Script vNext
+# -----------------------
+
+LOCK_DIR="$PREFIX/opt/lock"
+LOCK_FILE="$LOCK_DIR/Lockfile"
+EMERGENCY_LIMIT_FILE="$LOCK_DIR/emergency_count"
+ATTEMPT_LOG="$LOCK_DIR/attempts.log"
+
+mkdir -p "$LOCK_DIR"
+touch "$LOCK_FILE" "$ATTEMPT_LOG"
+chmod 600 "$LOCK_FILE" "$ATTEMPT_LOG"
+
+MAX_ATTEMPTS=15
+TIME_WINDOW=60  # seconds
+
+# -----------------------
+# Functions
+# -----------------------
+
+show_usage() {
+    echo "Usage:"
+    echo "  lock -s   Set a new password"
+    echo "  lock -c   Clear the password"
+    echo "  lock      Lock terminal (with -e and -x support)"
+}
+
+set_password() {
+    read -s -p "Enter new password: " pw1
+    echo
+    read -s -p "Confirm password: " pw2
+    echo
+    if [[ "$pw1" != "$pw2" ]]; then
+        echo "Passwords do not match!"
+        exit 1
+    fi
+    echo -n "$pw1" | sha256sum | awk '{print $1}' > "$LOCK_FILE"
+    chmod 600 "$LOCK_FILE"
+    echo "Password set successfully."
+}
+
+clear_password() {
+    rm -f "$LOCK_FILE" "$EMERGENCY_LIMIT_FILE" "$ATTEMPT_LOG"
+    echo "Password cleared."
+}
+
+rate_check() {
+    now=$(date +%s)
+    awk -v now=$now -v window=$TIME_WINDOW '$1 >= now - window' "$ATTEMPT_LOG" > "$ATTEMPT_LOG.tmp"
+    mv "$ATTEMPT_LOG.tmp" "$ATTEMPT_LOG"
+    count=$(wc -l < "$ATTEMPT_LOG")
+    if [[ $count -ge $MAX_ATTEMPTS ]]; then
+        echo "Too many attempts in the last $TIME_WINDOW seconds. Try again later."
+        exit 1
+    fi
+}
+
+emergency_mode() {
+    MAX_CMDS=50
+    if [[ ! -f "$EMERGENCY_LIMIT_FILE" ]]; then
+        echo 0 > "$EMERGENCY_LIMIT_FILE"
+    fi
+    echo "Emergency mode activated. Max $MAX_CMDS commands."
+    while true; do
+        count=$(cat "$EMERGENCY_LIMIT_FILE")
+        if [[ $count -ge $MAX_CMDS ]]; then
+            echo "Emergency limit reached. Locking terminal."
+            lock_terminal
+        fi
+        read -p "emergency> " cmd
+        [[ "$cmd" == "exit" ]] && break
+        eval "$cmd"
+        count=$((count+1))
+        echo $count > "$EMERGENCY_LIMIT_FILE"
+    done
+}
+
+forgot_password() {
+    echo "Forgot Password triggered."
+    echo "Please set a new password."
+    set_password
+}
+
+lock_terminal() {
+    if [[ ! -f "$LOCK_FILE" || ! -s "$LOCK_FILE" ]]; then
+        echo "No password set. Run 'lock -s' to set one."
+        exit 1
+    fi
+
+    while true; do
+        rate_check
+        read -s -p "[sudo] password for $USER: " input
+        echo
+        echo $(date +%s) >> "$ATTEMPT_LOG"  # log attempt timestamp
+
+        case "$input" in
+            -e) emergency_mode ;;
+            -x) forgot_password ;;
+            *) 
+                input_hash=$(echo -n "$input" | sha256sum | awk '{print $1}')
+                stored_hash=$(cat "$LOCK_FILE")
+                if [[ "$input_hash" == "$stored_hash" ]]; then
+                    echo "Access granted."
+                    return 0
+                else
+                    echo "Incorrect password!"
+                fi
+                ;;
+        esac
+    done
+}
+
+# -----------------------
+# Main
+# -----------------------
+
+case "$1" in
+    -s) set_password ;;
+    -c) clear_password ;;
+    "") lock_terminal ;;
+    *) show_usage ;;
+esac
