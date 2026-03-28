@@ -21,6 +21,7 @@ A collection of powerful utilities to supercharge your Termux Application!!!
 - "tct" → Test "tc"
 - "x" → Universal archive extractor
 - "lock" - Lock your terminal
+- "exe!" - Run scripts even from internal storage
 ---
 
 📦 Installation
