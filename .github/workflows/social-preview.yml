@@ -1,7 +1,9 @@
 name: Auto Update Social Preview
 
+# ✅ Force Node 24 BEFORE any step, treat warnings as non-fatal
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 
 on:
   push:
@@ -23,11 +25,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Download social preview safely
       - name: Fetch GitHub Open Graph preview
         run: |
           REPO_OWNER="tanazd2"
@@ -35,10 +35,10 @@ jobs:
           PREVIEW_URL="https://opengraph.githubassets.com/1/${REPO_OWNER}/${REPO_NAME}"
           mkdir -p .github
           echo "Downloading social preview from $PREVIEW_URL …"
+          # Retry 3x, non-fatal
           curl -fL --retry 3 --retry-delay 2 "$PREVIEW_URL" -o .github/social-preview.png \
             || echo "⚠️ Failed to download social preview. Skipping update."
 
-      # 3️⃣ Commit & push if there are changes
       - name: Commit and push social preview
         run: |
           git config user.name "github-actions[bot]"
