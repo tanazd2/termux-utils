@@ -27,7 +27,7 @@ A collection of powerful utilities to supercharge your Termux Application!!!
 
 
 
-CAUTION: read more ![here](.secrets/hidden/x1/README.md
+CAUTION: read more ![here](.secrets/.hidden/x1/README.md)
 
 ---
 
