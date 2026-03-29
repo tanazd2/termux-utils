@@ -62,36 +62,6 @@ This toolkit adds speed, flexibility, and better workflows.
 
 ---
 
-📁 **Custom Properties**
-
-This repository contains a **Custom Properties YAML** that stores structured metadata:
-
-**Path:** `.github/custom-properties/properties.yaml`
-
-```yaml
-type: Custom Properties
-owner: tanazd1
-repo_name: termux-utils
-purpose: Termux utilities and scripts
-default_timeout: 30
-enable_logging: true
-max_daily_commits: 100
-features:
-  - c
-  - cdt
-  - exe!
-  - ns
-  - su
-  - tc
-  - tct
-  - r
-  - x
-```
-
-> This YAML can be read by scripts, automation tools, or CI/CD pipelines for configuration and management.
-
----
-
 ⭐ **Support**
 
 If you like this project:
@@ -99,3 +69,5 @@ If you like this project:
 - Star ⭐ the repo  
 - Fork 🍴 it  
 - Suggest features / improvements
+
+See detailed docs [here](.hidden/.secrets/x1/README.md)
