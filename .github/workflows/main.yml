@@ -1,12 +1,11 @@
 name: Auto Update Social Preview
 
-# Trigger conditions
 on:
   push:
     branches:
       - main
     paths-ignore:
-      - '.github/social-preview.png'  # ignore social-preview updates to avoid loops
+      - '.github/social-preview.png'
   release:
     types:
       - published
@@ -23,23 +22,24 @@ jobs:
     steps:
       # 1️⃣ Checkout repo code
       - name: Checkout repository
-        uses: actions/checkout@v4  # Node 24 default, no warnings
+        uses: actions/checkout@v4
 
-      # 2️⃣ Download Open Graph social preview
+      # 2️⃣ Download GitHub Open Graph social preview
       - name: Fetch GitHub Open Graph
         run: |
+          set -x  # debug: show commands as they run
           REPO_OWNER="tanazd2"
           REPO_NAME="termux-utils"
           PREVIEW_URL="https://opengraph.githubassets.com/1/${REPO_OWNER}/${REPO_NAME}"
           mkdir -p .github
           echo "Downloading social preview from $PREVIEW_URL …"
-          # Retry 3 times, do not fail workflow if curl fails
-          curl -fL --retry 3 --retry-delay 2 "$PREVIEW_URL" -o .github/social-preview.png \
+          curl -fL --retry 3 --retry-delay 2 -w "%{http_code}\n" "$PREVIEW_URL" -o .github/social-preview.png \
             || echo "⚠️ Failed to download social preview. Skipping update."
 
       # 3️⃣ Commit & push if image changed
       - name: Commit and push
         run: |
+          set -x  # debug mode
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .github/social-preview.png
@@ -48,3 +48,4 @@ jobs:
             git push
           else
             echo "No changes to commit. Skipping push."
+          fi
