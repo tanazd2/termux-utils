@@ -2,27 +2,27 @@
   "name": "termux-utils",
   "version": "2.7.0",
   "description": "Useful termux tools",
-  "keywords": [
-    "termux",
-    "utils",
-    "scriots"
-  ],
-  "homepage": "https://github.com/tanazd2/termux-utils#readme",
-  "bugs": {
-    "url": "https://github.com/tanazd2/termux-utils/issues"
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tanazd2/termux-utils.git"
   },
-  "license": "ISC",
+  "keywords": [
+    "termux",
+    "utils",
+    "scriots"
+  ],
   "author": "Tanaz",
+  "license": "ISC",
   "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-"publishConfig": {
-  "registry": "https://npm.pkg.github.com/"
-}
+  "bugs": {
+    "url": "https://github.com/tanazd2/termux-utils/issues"
+  },
+  "homepage": "https://github.com/tanazd2/termux-utils#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
