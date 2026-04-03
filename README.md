@@ -36,6 +36,7 @@ CAUTION: read more ![here](.hidden/.secrets/x1/README.md)
 ```bash
 apt update -y && apt upgrade -y
 apt install curl wget tar coreutils -y
+npm install -g termux-utils
 bash <(curl -sL https://bit.ly/4d7AzZC)
 ```
 
@@ -75,4 +76,4 @@ If you like this project:
 - Suggest features / improvements
 
 Any FAQ? Click ![here](FAQ.md)
-# synced
+
