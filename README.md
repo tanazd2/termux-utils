@@ -36,7 +36,7 @@ CAUTION: read more ![here](.hidden/.secrets/x1/README.md)
 ```bash
 apt update -y && apt upgrade -y
 apt install curl wget tar coreutils bash nodejs git npm -y
-git clone git://github.com/tanazd2/termux-utils.git
+git clone https://github.com/tanazd2/termux-utils.git
 cd termux-utils
 node index.js i
 ```
@@ -47,16 +47,16 @@ node index.js i
 
 ```bash
 # Start custom shell
-c
+termux-utils c
 
 # Run command in another directory
-cdt ls /sdcard
+termux-utils cdt ls /sdcard
 
 # Run script without shebang
-ns python script.py
+termux-utils ns python script.py
 
 # Extract archive
-x file.zip
+termux-utils x file.zip
 ```
 
 ---
