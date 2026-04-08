@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# push - Push local repo to GitHub safely
+# push - Auto pull --rebase and push local changes to GitHub
 
 if [ -z "$1" ]; then
     echo "Usage: ./push \"commit message\""
@@ -16,11 +16,17 @@ else
     echo "⚠️ Nothing to commit, working tree clean"
 fi
 
-# Try to push
+# Auto pull with rebase to sync remote changes
+echo "🔄 Pulling remote changes with rebase..."
+if ! git pull --rebase origin main; then
+    echo "❌ Rebase failed! Resolve conflicts manually and run ./push again."
+    exit 1
+fi
+
+# Push to remote
 if git push origin main; then
-    echo "✅ Pushed to GitHub!"
+    echo "✅ Successfully pushed to GitHub!"
 else
-    echo "❌ Push failed! Remote has commits you don't have."
-    echo "Hint: run 'git pull --rebase origin main' first, then ./push again"
+    echo "❌ Push still failed! Check your network or remote permissions."
     exit 1
 fi
